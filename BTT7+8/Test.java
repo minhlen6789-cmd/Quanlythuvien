@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-// YEU CAU 3 & 4
-
+// KET HOP YEU CAU BAI 7 VA BAI 8
 public class Test {
     private static Scanner sc = new Scanner(System.in);
 
-    // Yeu cau 4: Tao va quan ly danh sach Sach bang ArrayList
+    // [BAI 7 - YEU CAU 4]: Tao va quan ly danh sach Sach bang ArrayList
     private static ArrayList<Sach> danhSachSach = new ArrayList<>();
 
+    // Khoi tao du lieu mau ban dau de test nhanh
     public static void khoiTaoDuLieuMau() {
         danhSachSach.clear();
         danhSachSach.add(new Sach("S001", "Lap trinh Java co ban", "Nguyen Van A", 2021, 15));
@@ -17,24 +17,38 @@ public class Test {
         danhSachSach.add(new Sach("S004", "Lap trinh Huong doi tuong", "Pham Van D", 2023, 12));
     }
 
-    // Yeu cau 3: Xay dung lop Test de tao doi tuong tu lop Sach
+    // BAI 7 - YEU CAU 3 & BAI 8 - YEU CAU 2, 3, 4
     public static void demoYeuCau3() {
 
-        System.out.println("[+] Tao sach 1 bang Constructor day du tham so:");
+        // 1. Tao sach 1 bang Constructor day du tham so (Bai 8 - Yeu cau 4)
+        System.out.println("[+] Tao sach 1 bang Constructor day du tham so (Bai 8 - YC4):");
         Sach sach1 = new Sach("B01", "Giai thuat lap trinh", "Nguyen Van An", 2022, 10);
         sach1.hienThiThongTin();
 
-        System.out.println("[+] Tao sach 2 bang Constructor khong tham so va Setters:");
+        // 2. Tao sach 2 bang Constructor khong tham so va dung Setters (Bai 8 - Yeu cau
+        // 2)
+        System.out.println("[+] Tao sach 2 bang Constructor khong tham so va Setters (Bai 8 - YC2):");
         Sach sach2 = new Sach();
         sach2.setMaSach("B02");
         sach2.setTieuDe("Thiet ke he thong");
         sach2.setTacGia("Tran Thi Binh");
-        sach2.setNamXuatBan(2023);
-        sach2.setSoLuong(5);
+        sach2.setNamXuatBan(2023); // Hop le
+        sach2.setSoLuong(5); // Hop le
         sach2.hienThiThongTin();
+
+        // 3. Kiem tra rang buoc du lieu cua Setters (Bai 8 - Yeu cau 3)
+        System.out.println("[+] Kiem tra rang buoc du lieu cua Setters (Bai 8 - YC3):");
+        System.out.println("--> Thu set nam xuat ban khong hop le (2099):");
+        sach2.setNamXuatBan(2099);
+
+        System.out.println("--> Thu set nam xuat ban am (-5):");
+        sach2.setNamXuatBan(-5);
+
+        System.out.println("--> Thu set so luong am (-10):");
+        sach2.setSoLuong(-10);
     }
 
-    // Yeu cau 4: Cac thao tac quan ly ArrayList<Sach>
+    // BAI 7 - YEU CAU 4: CAC THAO TAC QUAN LY ArrayList<Sach>
 
     // 1. Them sach moi vao danh sach
     public static void themSach() {
@@ -66,7 +80,7 @@ public class Test {
         for (Sach s : danhSachSach) {
             s.hienThiDangBang();
         }
-        System.out.println("Tong so loai sach: " + danhSachSach.size());
+        System.out.println("Tong so dau sach: " + danhSachSach.size());
     }
 
     // 3. Tim kiem sach theo ma sach hoac tieu de
@@ -133,18 +147,20 @@ public class Test {
         System.out.println("-> Tong so luong sach hien co trong thu vien: " + tong + " quyen.");
     }
 
+    // Ham main thuc thi chuong trinh
     public static void main(String[] args) {
+        // Nap du lieu mau ban dau
         khoiTaoDuLieuMau();
 
         int luaChon = -1;
         do {
             System.out.println("       CHUONG TRINH QUAN LY SACH THU VIEN         ");
-            System.out.println("1. Tao doi tuong tu lop Sach");
-            System.out.println("2. Hien thi danh sach sach (ArrayList)");
-            System.out.println("3. Them sach moi vao ArrayList");
-            System.out.println("4. Tim kiem sach (theo ma / tieu de)");
-            System.out.println("5. Xoa sach theo ma sach");
-            System.out.println("6. Tinh tong so luong tat ca sach");
+            System.out.println("1.Tao doi tuong tu lop Sach (Bai 7 & Bai 8)");
+            System.out.println("2.Hien thi danh sach sach (ArrayList)");
+            System.out.println("3.Them sach moi vao ArrayList");
+            System.out.println("4.Tim kiem sach (theo ma / tieu de)");
+            System.out.println("5.Xoa sach theo ma sach");
+            System.out.println("6.Tinh tong so luong tat ca sach");
             System.out.println("7. Nap lai du lieu mau ban dau");
             System.out.println("0. Thoat chuong trinh");
             System.out.print("Moi ban chon (0-7): ");
